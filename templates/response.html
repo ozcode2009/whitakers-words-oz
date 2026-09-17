@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Whitaker's Words</title>
+</head>
+<body>
+    <form onsubmit="redirectToPage(event)">
+        <input id="destination" type="text" placeholder="Latin goes here..."></input>
+        <button type="submit">Go</button>
+    </form>
+
+    <div id="response" style="white-space: pre-wrap;">
+        {{ response }}
+    </div>
+
+    <script>
+        function redirectToPage(event) {
+            event.preventDefault();
+            const selectedUrl = "http://localhost:8000/words/" + document.getElementById("destination").value
+            window.location.href = selectedUrl;
+        }
+    </script>
+</body>
+</html>
