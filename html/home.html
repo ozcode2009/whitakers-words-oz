@@ -1,0 +1,68 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <title>Whitaker's Words</title> <link rel="preconnect" 
+    href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link 
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+<style> .title { display: flex; justify-content: center; font-family: "Montserrat", sans-serif; 
+        font-optical-sizing: auto; font-weight: 700; font-style: normal; color: white;
+    }
+    .app { margin-top: 135px; position: relative; display: flex; flex-direction: column; justify-content: center; 
+        align-items: center;
+    }
+    .output { font-family: "Courier New", Courier, monospace; background-color: #f0f0f0; min-height: 200px; min-width: 450px; 
+        padding: 10px; border: 1px solid darkgrey; border-radius: 5px;
+    }
+    .top { position: absolute; /*or position: fixed; to stay in place on scroll */ top: 0; left: 0; right: 0; width: 100vw; 
+        margin: 0; background-image: linear-gradient(120deg, #755799, #129957); height: 120px;
+    }
+    .inputfields { display: flex; justify-content: center; flex-direction: column; font-family: "Montserrat", sans-serif; 
+        font-optical-sizing: auto; font-weight: 700; font-style: normal; border: 5px solid cornflowerblue; border-radius: 
+        15px; padding: 15px; width: fit-content; gap: 10px;
+    }
+    .latininput { display: flex; flex-direction: row; gap: 15px; font-family: "Montserrat", sans-serif; font-optical-sizing: 
+        auto; font-weight: 700; font-style: normal;
+    }
+    .englishinput { display: flex; flex-direction: row; gap: 15px; font-family: "Montserrat", sans-serif; 
+        font-optical-sizing: auto; font-weight: 700; font-style: normal;
+    }
+    .inputfield { width: 100%; max-width: 300px; padding: 10px 14px; box-sizing: border-box; /* Includes padding in the total 
+        width */ /* Typography */ font-size: 16px; color: #333333; /* Border & Background */ background-color: #ffffff; 
+        border: 1px solid #ccc; border-radius: 6px; /* Smooth interactive transition */ transition: border-color 0.2s ease, 
+        box-shadow 0.2s ease;
+    }
+    .inputfield::placeholder { color: #333333; opacity: 1;
+    }
+    .go-button { /* Core Structure & Sizing */ display: inline-block; padding: 12px 24px; /* Vertical & Horizontal breathing 
+        room */ font-size: 16px; /* Clear, readable text size */ font-weight: 600; /* Semi-bold text label */ font-family: 
+        sans-serif; /* Clean typography */ text-align: center; text-decoration: none; /* Colors & Visual Style */ color: 
+        #ffffff; /* White text */
+        background-color: #aa7bff; /* Vibrant blue background */ border: none; /* Removes ugly default browser borders */ 
+        border-radius: 6px; /* Smooth, modern rounded corners */ /* Interaction Details */ cursor: pointer; /* Shows the 
+        "hand" pointer on hover */ transition: all 0.2s ease; /* Smooths out hover and active state transitions */
+    }
+    .info { font-family: "Montserrat", sans-serif; font-optical-sizing: auto; font-weight: 400; font-style: normal; padding: 
+        10px;
+    }
+</style>
+
+	</head> <body> <div class="top"> <h1 class="title"> Whitaker's Words </h1> <h3 class="title"> A digital English-Latin 
+        dictionary
+    </h3> </div> <div class="app"> <div class="inputfields"> <form onsubmit="redirectToPage(event)" class="latininput"> 
+            <input class="inputfield" id="destination" type="text" placeholder="Latin goes here..."></input> <button 
+            type="submit" class="go-button">Go</button>
+        </form> <form onsubmit="redirectToEnglish(event)" class="englishinput"> <input class="inputfield" 
+            id="englishDestination" type="text" placeholder="English goes here..."></input> <button type="submit" 
+            class="go-button">Go</button>
+        </form> <hr> <div class="output"> Whitaker's responses will appear here </div> <hr> </div> <div class="info"> <span> 
+                    Website Copyright (c) 2026 Oliver Crumrine
+                </span> <br> <span> Whitaker's Words Copyright (c) William A. Whitaker </span> <br> <span> Whitaker's Words, 
+                    the backend of this application, is made freely available on GitHub: <a 
+                    href="https://github.com/mk270/whitakers-words">Whitaker's Words</a>
+                </span> <br> <span> Support the <a href="https://njjcl.weebly.com">NJ-JCL</a>! </span> </div> </div> </body> 
+<script>
+    function redirectToPage(event) { event.preventDefault(); const selectedUrl = "http://latin.ozapps.cloud/words/" + 
+        document.getElementById("destination").value; window.location.href = selectedUrl;
+    }
+    function redirectToEnglish(event) { event.preventDefault(); const selectedUrl = "http://latin.ozapps.cloud/english/" + 
+        document.getElementById("englishDestination").value; window.location.href = selectedUrl;
+    }
+</script> </html>

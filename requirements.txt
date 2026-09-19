@@ -1,0 +1,4 @@
+fastapi[standard]>=0.141.1
+uvicorn>=0.53.0
+git+https://github.com/blagae/whitakers_words.git#egg=whitakers_words
+

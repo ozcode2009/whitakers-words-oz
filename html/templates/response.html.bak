@@ -17,7 +17,7 @@
     <script>
         function redirectToPage(event) {
             event.preventDefault();
-            const selectedUrl = "http://localhost:8000/words/" + document.getElementById("destination").value
+            const selectedUrl = "https://ww.ozapps.cloud/words/" + document.getElementById("destination").value
             window.location.href = selectedUrl;
         }
     </script>
